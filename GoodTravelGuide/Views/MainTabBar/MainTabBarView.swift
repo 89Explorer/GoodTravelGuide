@@ -26,7 +26,7 @@ class MainTabBarView: UIView {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.layer.cornerRadius = 20
-        stackView.backgroundColor = UIColor(named: "lightest-purple")
+        stackView.backgroundColor = UIColor(named: "darkest-orange")
         return stackView
     }()
     
@@ -84,6 +84,7 @@ class MainTabBarView: UIView {
         button.tag = tag
         return button
     }
+    
     
     /// 버튼이 눌렸을 때 호출되는 함수
     /// - Parameter sender: 눌린 버튼 객체

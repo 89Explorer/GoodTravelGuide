@@ -13,6 +13,9 @@
 		9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F12C7D653600334822 /* SearchViewController.swift */; };
 		9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F32C7D654E00334822 /* FavoritesViewController.swift */; };
 		9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F52C7D655800334822 /* ProfileViewController.swift */; };
+		9DC0F3FE2C7D932E00334822 /* NavigationBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */; };
+		9DC0F4062C7E266F00334822 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */; };
+		9DC0F4082C7E2F4800334822 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */; };
 		9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633A2C7C52B2000D063B /* AppDelegate.swift */; };
 		9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */; };
 		9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633E2C7C52B2000D063B /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 		9DC0F3F12C7D653600334822 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9DC0F3F32C7D654E00334822 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		9DC0F3F52C7D655800334822 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleView.swift; sourceTree = "<group>"; };
+		9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		9DD663372C7C52B2000D063B /* GoodTravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD6633A2C7C52B2000D063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,8 +126,9 @@
 		9DC0F3EB2C7D60C100334822 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0F3FC2C7D930900334822 /* Navigation */,
 				9DC0F3F92C7D8AB700334822 /* MainTabBar */,
-				9DC0F3F82C7D8AAE00334822 /* Home */,
+				9DC0F3F82C7D8AAE00334822 /* CollectionView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,11 +148,13 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		9DC0F3F82C7D8AAE00334822 /* Home */ = {
+		9DC0F3F82C7D8AAE00334822 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */,
+				9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */,
 			);
-			path = Home;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		9DC0F3F92C7D8AB700334822 /* MainTabBar */ = {
@@ -154,6 +163,14 @@
 				9DC0F3E92C7D60B900334822 /* MainTabBarView.swift */,
 			);
 			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		9DC0F3FC2C7D930900334822 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		9DD6632E2C7C52B2000D063B = {
@@ -341,7 +358,10 @@
 			files = (
 				9DC0F3EA2C7D60B900334822 /* MainTabBarView.swift in Sources */,
 				9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */,
+				9DC0F3FE2C7D932E00334822 /* NavigationBarTitleView.swift in Sources */,
 				9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */,
+				9DC0F4082C7E2F4800334822 /* CategoryCollectionView.swift in Sources */,
+				9DC0F4062C7E266F00334822 /* CategoryCollectionViewCell.swift in Sources */,
 				9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */,
 				9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */,
 				9DD663452C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld in Sources */,
