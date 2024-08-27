@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DC0F3EA2C7D60B900334822 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3E92C7D60B900334822 /* MainTabBarView.swift */; };
+		9DC0F3EE2C7D64DE00334822 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3ED2C7D64DE00334822 /* MainTabBarViewController.swift */; };
+		9DC0F3F02C7D652C00334822 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3EF2C7D652C00334822 /* HomeViewController.swift */; };
+		9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F12C7D653600334822 /* SearchViewController.swift */; };
+		9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F32C7D654E00334822 /* FavoritesViewController.swift */; };
+		9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3F52C7D655800334822 /* ProfileViewController.swift */; };
 		9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633A2C7C52B2000D063B /* AppDelegate.swift */; };
 		9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */; };
 		9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633E2C7C52B2000D063B /* ViewController.swift */; };
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9DC0F3E92C7D60B900334822 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		9DC0F3ED2C7D64DE00334822 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		9DC0F3EF2C7D652C00334822 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9DC0F3F12C7D653600334822 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9DC0F3F32C7D654E00334822 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9DC0F3F52C7D655800334822 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9DD663372C7C52B2000D063B /* GoodTravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD6633A2C7C52B2000D063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +88,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DC0F3E52C7D514F00334822 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3EC2C7D64C400334822 /* TabBar */,
+				9DC0F3E72C7D520B00334822 /* Core */,
+				9DC0F3E62C7D520600334822 /* General */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9DC0F3E62C7D520600334822 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9DD6633E2C7C52B2000D063B /* ViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		9DC0F3E72C7D520B00334822 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3EF2C7D652C00334822 /* HomeViewController.swift */,
+				9DC0F3F12C7D653600334822 /* SearchViewController.swift */,
+				9DC0F3F32C7D654E00334822 /* FavoritesViewController.swift */,
+				9DC0F3F52C7D655800334822 /* ProfileViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9DC0F3EB2C7D60C100334822 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3F92C7D8AB700334822 /* MainTabBar */,
+				9DC0F3F82C7D8AAE00334822 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DC0F3EC2C7D64C400334822 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3ED2C7D64DE00334822 /* MainTabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9DC0F3F72C7D705E00334822 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		9DC0F3F82C7D8AAE00334822 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9DC0F3F92C7D8AB700334822 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F3E92C7D60B900334822 /* MainTabBarView.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
 		9DD6632E2C7C52B2000D063B = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +179,11 @@
 		9DD663392C7C52B2000D063B /* GoodTravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0F3F72C7D705E00334822 /* New Group */,
+				9DC0F3EB2C7D60C100334822 /* Views */,
+				9DC0F3E52C7D514F00334822 /* Controllers */,
 				9DD6633A2C7C52B2000D063B /* AppDelegate.swift */,
 				9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */,
-				9DD6633E2C7C52B2000D063B /* ViewController.swift */,
 				9DD663462C7C52B4000D063B /* Assets.xcassets */,
 				9DD663482C7C52B4000D063B /* LaunchScreen.storyboard */,
 				9DD6634B2C7C52B4000D063B /* Info.plist */,
@@ -257,9 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC0F3EA2C7D60B900334822 /* MainTabBarView.swift in Sources */,
+				9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */,
+				9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */,
 				9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */,
+				9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */,
 				9DD663452C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld in Sources */,
+				9DC0F3EE2C7D64DE00334822 /* MainTabBarViewController.swift in Sources */,
 				9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */,
+				9DC0F3F02C7D652C00334822 /* HomeViewController.swift in Sources */,
 				9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
