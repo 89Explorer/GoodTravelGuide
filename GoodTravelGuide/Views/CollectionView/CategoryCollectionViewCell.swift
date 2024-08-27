@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol CategoryCollectionViewDelegate: AnyObject {
+    func didSelected(at index: Int)
+}
+
+
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Variables
     static let identifier = "CategoryCollectionViewCell"
+    weak var delegate: CategoryCollectionViewDelegate? 
+    private var index: Int?
     
     
     // MARK: - UI Components
@@ -70,8 +77,21 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     
     // MARK: - Functions
-    func configure(with title: String, isSelected: Bool) {
+    func configure(with title: String, isSelected: Bool, index: Int) {
         categoryTitleLabel.text = title
         categoryTitleLabel.textColor = isSelected ? .black : .white
+        basicView.backgroundColor = isSelected ? .white : .darkestOrange
+        self.index = index
+    }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func cellTapped() {
+        if let index = index {
+            delegate?.didSelected(at: index)
+        }
     }
 }

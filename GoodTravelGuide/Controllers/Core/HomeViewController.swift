@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol CategoryCollectionViewDelegate: AnyObject {
-    func didSelected(at index: Int)
-}
 
 class HomeViewController: UIViewController {
     
@@ -17,8 +14,8 @@ class HomeViewController: UIViewController {
     // MARK: - Variables
     private let categoryButtonTitle = ["Attractions", "Facilities", "Events", "Course"]
     private let categoryButtonImageName = ["attraction", "facilities", "event", "tour"]
+    
     private var selectedIndex: Int = 0 // 선택된 버튼의 인덱스
-    weak var delegate: CategoryCollectionViewDelegate?
     
     
     // MARK: - UI Components
@@ -93,18 +90,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let title = categoryButtonTitle[indexPath.row]
         let isSelected = indexPath.item == selectedIndex
+        cell.delegate = self
         
-        cell.configure(with: title, isSelected: isSelected)
-        
+        cell.configure(with: title, isSelected: isSelected, index: indexPath.item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.item
         collectionView.reloadData() // 선택 상태 업데이트
-        delegate?.didSelected(at: selectedIndex) // Delegate 호출
+        didSelected(at: selectedIndex) // Delegate 호출
     }
 }
+
 
 
 extension HomeViewController: CategoryCollectionViewDelegate {
@@ -116,20 +114,26 @@ extension HomeViewController: CategoryCollectionViewDelegate {
             loadFacilitiesData()
         case 2:
             loadEventsData()
+        case 3:
+            loadCourseData()
         default:
             break
         }
     }
     
     private func loadAttractionsData() {
-        // API 호출 및 데이터 처리
+        print("Attractions data loaded")
     }
     
     private func loadFacilitiesData() {
-        // API 호출 및 데이터 처리
+        print("Facilities data loaded")
     }
     
     private func loadEventsData() {
-        // API 호출 및 데이터 처리
+        print("Events data loaded")
+    }
+    
+    private func loadCourseData() {
+        print("Course data loaded")
     }
 }
