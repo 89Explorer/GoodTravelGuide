@@ -20,6 +20,7 @@ class CategoryCollectionView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     

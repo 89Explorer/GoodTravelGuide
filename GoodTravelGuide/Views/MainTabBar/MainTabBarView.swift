@@ -26,6 +26,7 @@ class MainTabBarView: UIView {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.layer.cornerRadius = 20
+        stackView.clipsToBounds = true
         stackView.backgroundColor = UIColor(named: "darkest-orange")
         return stackView
     }()
@@ -100,7 +101,7 @@ class MainTabBarView: UIView {
         [homeButton, searchButton, profileButton].forEach { $0.tintColor = .white }
         
         // 선택된 버튼의 색상을 검은색으로 설정
-        button.tintColor = .black
+        button.tintColor = .newOrange
         selectedButton = button  // 현재 선택된 버튼을 업데이트
     }
 }

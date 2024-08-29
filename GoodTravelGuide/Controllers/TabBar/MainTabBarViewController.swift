@@ -43,10 +43,10 @@ class MainTabBarViewController: UITabBarController {
     // MARK: Layouts
     func configureConstraints() {
         let mainTabBarConstraints = [
-            mainTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            mainTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            mainTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            mainTabBar.heightAnchor.constraint(equalToConstant: 60)
+            mainTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            mainTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            mainTabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            mainTabBar.heightAnchor.constraint(equalToConstant: 80)
         ]
         
         NSLayoutConstraint.activate(mainTabBarConstraints)

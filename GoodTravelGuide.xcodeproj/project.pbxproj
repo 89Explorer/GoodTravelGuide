@@ -16,6 +16,10 @@
 		9DC0F3FE2C7D932E00334822 /* NavigationBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */; };
 		9DC0F4062C7E266F00334822 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */; };
 		9DC0F4082C7E2F4800334822 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */; };
+		9DC0F40B2C7EDF0B00334822 /* CategoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F40A2C7EDF0B00334822 /* CategoryTableView.swift */; };
+		9DC0F40D2C7F6D6A00334822 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F40C2C7F6D6A00334822 /* CategoryTableViewCell.swift */; };
+		9DC0F4102C803C4B00334822 /* TitleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F40F2C803C4B00334822 /* TitleImageView.swift */; };
+		9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4112C80AB5A00334822 /* CheckViewController.swift */; };
 		9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633A2C7C52B2000D063B /* AppDelegate.swift */; };
 		9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */; };
 		9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633E2C7C52B2000D063B /* ViewController.swift */; };
@@ -54,6 +58,10 @@
 		9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleView.swift; sourceTree = "<group>"; };
 		9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
+		9DC0F40A2C7EDF0B00334822 /* CategoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableView.swift; sourceTree = "<group>"; };
+		9DC0F40C2C7F6D6A00334822 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		9DC0F40F2C803C4B00334822 /* TitleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleImageView.swift; sourceTree = "<group>"; };
+		9DC0F4112C80AB5A00334822 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		9DD663372C7C52B2000D063B /* GoodTravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD6633A2C7C52B2000D063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD6633E2C7C52B2000D063B /* ViewController.swift */,
+				9DC0F4112C80AB5A00334822 /* CheckViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -126,6 +135,8 @@
 		9DC0F3EB2C7D60C100334822 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0F40E2C803C2400334822 /* Home */,
+				9DC0F4092C7EDEF500334822 /* TableView */,
 				9DC0F3FC2C7D930900334822 /* Navigation */,
 				9DC0F3F92C7D8AB700334822 /* MainTabBar */,
 				9DC0F3F82C7D8AAE00334822 /* CollectionView */,
@@ -171,6 +182,23 @@
 				9DC0F3FD2C7D932E00334822 /* NavigationBarTitleView.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9DC0F4092C7EDEF500334822 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F40A2C7EDF0B00334822 /* CategoryTableView.swift */,
+				9DC0F40C2C7F6D6A00334822 /* CategoryTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		9DC0F40E2C803C2400334822 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F40F2C803C4B00334822 /* TitleImageView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		9DD6632E2C7C52B2000D063B = {
@@ -357,18 +385,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC0F3EA2C7D60B900334822 /* MainTabBarView.swift in Sources */,
+				9DC0F40B2C7EDF0B00334822 /* CategoryTableView.swift in Sources */,
 				9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */,
 				9DC0F3FE2C7D932E00334822 /* NavigationBarTitleView.swift in Sources */,
 				9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */,
+				9DC0F40D2C7F6D6A00334822 /* CategoryTableViewCell.swift in Sources */,
 				9DC0F4082C7E2F4800334822 /* CategoryCollectionView.swift in Sources */,
 				9DC0F4062C7E266F00334822 /* CategoryCollectionViewCell.swift in Sources */,
 				9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */,
 				9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */,
 				9DD663452C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld in Sources */,
+				9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */,
 				9DC0F3EE2C7D64DE00334822 /* MainTabBarViewController.swift in Sources */,
 				9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */,
 				9DC0F3F02C7D652C00334822 /* HomeViewController.swift in Sources */,
 				9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */,
+				9DC0F4102C803C4B00334822 /* TitleImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,10 +65,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         ]
         
         let categoryTitleLabelConstraints = [
-            categoryTitleLabel.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
-            categoryTitleLabel.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
-            categoryTitleLabel.topAnchor.constraint(equalTo: basicView.topAnchor, constant: 10),
-            categoryTitleLabel.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -10)
+            categoryTitleLabel.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 8),
+            categoryTitleLabel.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -8),
+            categoryTitleLabel.topAnchor.constraint(equalTo: basicView.topAnchor, constant: 8),
+            categoryTitleLabel.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -8)
         ]
         
         NSLayoutConstraint.activate(basicViewCosntraints)
@@ -82,16 +82,5 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryTitleLabel.textColor = isSelected ? .black : .white
         basicView.backgroundColor = isSelected ? .white : .darkestOrange
         self.index = index
-    }
-    
-    private func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
-        self.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func cellTapped() {
-        if let index = index {
-            delegate?.didSelected(at: index)
-        }
     }
 }

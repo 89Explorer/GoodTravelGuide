@@ -15,7 +15,6 @@ class NavigationBarTitleView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fillEqually
         stackView.spacing = 2
         return stackView
     }()
@@ -23,7 +22,7 @@ class NavigationBarTitleView: UIView {
     private let mainTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.font = .systemFont(ofSize: 32, weight: .heavy)
         label.textColor = .label
         label.textAlignment = .left
         return label
@@ -32,7 +31,7 @@ class NavigationBarTitleView: UIView {
     private let subTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 28, weight: .bold)
+        label.font = .systemFont(ofSize: 28, weight: .heavy)
         label.textColor = .label
         label.textAlignment = .left
         return label
@@ -71,10 +70,10 @@ class NavigationBarTitleView: UIView {
         ]
         
         let titleUnderLineConstraints = [
-            titleUnderLine.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 8),
+            titleUnderLine.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 4),
             titleUnderLine.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleUnderLine.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleUnderLine.heightAnchor.constraint(equalToConstant: 2)
+            titleUnderLine.heightAnchor.constraint(equalToConstant: 3)
         ]
         
         NSLayoutConstraint.activate(titleStackViewConstraints)
