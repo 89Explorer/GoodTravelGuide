@@ -20,6 +20,8 @@
 		9DC0F40D2C7F6D6A00334822 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F40C2C7F6D6A00334822 /* CategoryTableViewCell.swift */; };
 		9DC0F4102C803C4B00334822 /* TitleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F40F2C803C4B00334822 /* TitleImageView.swift */; };
 		9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4112C80AB5A00334822 /* CheckViewController.swift */; };
+		9DC0F4162C815A5F00334822 /* HotPlacesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4152C815A5F00334822 /* HotPlacesCollectionView.swift */; };
+		9DC0F4182C815CE200334822 /* HotPlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4172C815CE200334822 /* HotPlacesCollectionViewCell.swift */; };
 		9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633A2C7C52B2000D063B /* AppDelegate.swift */; };
 		9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */; };
 		9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633E2C7C52B2000D063B /* ViewController.swift */; };
@@ -62,6 +64,8 @@
 		9DC0F40C2C7F6D6A00334822 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9DC0F40F2C803C4B00334822 /* TitleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleImageView.swift; sourceTree = "<group>"; };
 		9DC0F4112C80AB5A00334822 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		9DC0F4152C815A5F00334822 /* HotPlacesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlacesCollectionView.swift; sourceTree = "<group>"; };
+		9DC0F4172C815CE200334822 /* HotPlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD663372C7C52B2000D063B /* GoodTravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD6633A2C7C52B2000D063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			children = (
 				9DC0F4052C7E266F00334822 /* CategoryCollectionViewCell.swift */,
 				9DC0F4072C7E2F4800334822 /* CategoryCollectionView.swift */,
+				9DC0F4152C815A5F00334822 /* HotPlacesCollectionView.swift */,
+				9DC0F4172C815CE200334822 /* HotPlacesCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -396,9 +402,11 @@
 				9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */,
 				9DD663452C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld in Sources */,
 				9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */,
+				9DC0F4162C815A5F00334822 /* HotPlacesCollectionView.swift in Sources */,
 				9DC0F3EE2C7D64DE00334822 /* MainTabBarViewController.swift in Sources */,
 				9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */,
 				9DC0F3F02C7D652C00334822 /* HomeViewController.swift in Sources */,
+				9DC0F4182C815CE200334822 /* HotPlacesCollectionViewCell.swift in Sources */,
 				9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */,
 				9DC0F4102C803C4B00334822 /* TitleImageView.swift in Sources */,
 			);
