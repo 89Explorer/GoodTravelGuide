@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TitleImageView: UIView {
     
-    let buttonTitle: [String] = ["인문", "역사관광지", "유적지/사적지"]
     
     // MARK: - UI Components
     private let basicView: UIView = {
@@ -28,7 +28,7 @@ class TitleImageView: UIView {
         imageView.image = UIImage(named: "korea")
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -62,20 +62,13 @@ class TitleImageView: UIView {
         return label
     }()
     
-    private let categoryButtonStack: UIStackView = {
+    private let categoryLabelStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.spacing = 10
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 5
         return stackView
-    }()
-    
-    private lazy var buttons: [UIButton] = {
-        return buttonTitle.map { title in
-            let button = createCustomButton(withTitle: title)
-            return button
-        }
     }()
     
     private let bookMarkButton: UIButton = {
@@ -110,10 +103,7 @@ class TitleImageView: UIView {
         titleStackView.addArrangedSubview(titleLabel)
         titleStackView.addArrangedSubview(addressLabel)
         
-        addSubview(categoryButtonStack)
-        for button in buttons {
-            categoryButtonStack.addArrangedSubview(button)
-        }
+        addSubview(categoryLabelStack)
         
         addSubview(bookMarkButton)
         
@@ -137,22 +127,24 @@ class TitleImageView: UIView {
         
         let titleImageViewConstraints = [
             titleImageView.centerXAnchor.constraint(equalTo: basicView.centerXAnchor),
-            titleImageView.topAnchor.constraint(equalTo: basicView.topAnchor, constant: 20),
-            titleImageView.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 20),
-            titleImageView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -20),
+            titleImageView.topAnchor.constraint(equalTo: basicView.topAnchor, constant: 10),
+            titleImageView.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
+            titleImageView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
             titleImageView.heightAnchor.constraint(equalToConstant: 200)
         ]
         
         let titleStackViewConstraints = [
             titleStackView.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
             titleStackView.topAnchor.constraint(equalTo: titleImageView.bottomAnchor, constant: 10),
+            titleStackView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
             titleStackView.heightAnchor.constraint(equalToConstant: 50)
         ]
         
-        let categoryButtonStackConstraints = [
-            categoryButtonStack.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
-            categoryButtonStack.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 15),
-            categoryButtonStack.heightAnchor.constraint(equalToConstant: 30),
+        let categoryLabelStackConstraints = [
+            categoryLabelStack.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
+            categoryLabelStack.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 15),
+            categoryLabelStack.heightAnchor.constraint(equalToConstant: 30),
+            categoryLabelStack.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor)
         ]
         
         let bookMarkButtonConstraints = [
@@ -163,23 +155,26 @@ class TitleImageView: UIView {
         NSLayoutConstraint.activate(basicViewConstraints)
         NSLayoutConstraint.activate(titleImageViewConstraints)
         NSLayoutConstraint.activate(titleStackViewConstraints)
-        NSLayoutConstraint.activate(categoryButtonStackConstraints)
+        NSLayoutConstraint.activate(categoryLabelStackConstraints)
         NSLayoutConstraint.activate(bookMarkButtonConstraints)
     }
     
     
     // MARK: - Functions
-//    func createCustomButton(withTitle title: String) -> UIButton {
-//        let button = UIButton(type: .system)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setTitle(title, for: .normal)
-//        button.backgroundColor = .darkOrange
-//        button.setTitleColor(.white, for: .normal)
-//        button.layer.cornerRadius = 4
-//        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-//        button.titleEdgeInsets
-//        return button
-//    }
+    func createCustomLabel(withTitle title: String) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = title
+        label.layer.cornerRadius = 5
+        label.clipsToBounds = true
+        label.textColor = .white
+        label.backgroundColor = .darkOrange
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.numberOfLines = 0
+        return label
+    }
+    
     
     func createCustomButton(withTitle title: String) -> UIButton {
         var configuration = UIButton.Configuration.filled()
@@ -199,5 +194,42 @@ class TitleImageView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
+    }
+    
+    func configureData(with model: Item) {
+        
+        // 기존에 추가된 라벨들을 제거
+        categoryLabelStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        guard let posterPath = model.firstimage else { return }
+        
+        let title = model.title
+        let address = model.addr1
+        let firstCategory = model.cat1
+        let secondCategory = model.cat2
+        let thirdCategory = model.cat3
+        
+        guard let firstCategory = FirstCategory(rawValue: firstCategory),
+              let secondCategory = SecondCategory(rawValue: secondCategory),
+              let thirdCategory = ThirdCategory(rawValue: thirdCategory) else { return }
+        
+        let labelTitle: [String] = [firstCategory.displayName, secondCategory.displayName, thirdCategory.displayName]
+        
+        for title in labelTitle {
+            let label = createCustomLabel(withTitle: title)
+            categoryLabelStack.addArrangedSubview(label)
+        }
+        
+        
+        let securePosterURL = posterPath.replacingOccurrences(of: "http://", with: "https://")
+        
+        if let url = URL(string: securePosterURL){
+            titleImageView.sd_setImage(with: url)
+        } else {
+            titleImageView.image = UIImage(systemName: "house")
+        }
+        
+        titleLabel.text = title
+        addressLabel.text = address
     }
 }

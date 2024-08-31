@@ -22,6 +22,11 @@
 		9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4112C80AB5A00334822 /* CheckViewController.swift */; };
 		9DC0F4162C815A5F00334822 /* HotPlacesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4152C815A5F00334822 /* HotPlacesCollectionView.swift */; };
 		9DC0F4182C815CE200334822 /* HotPlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4172C815CE200334822 /* HotPlacesCollectionViewCell.swift */; };
+		9DC0F41A2C819FB100334822 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4192C819FB100334822 /* NetworkManager.swift */; };
+		9DC0F41E2C8257C100334822 /* AttractionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F41D2C8257C100334822 /* AttractionResponse.swift */; };
+		9DC0F4212C82CFA200334822 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9DC0F4202C82CFA200334822 /* SDWebImage */; };
+		9DC0F4232C82CFA200334822 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9DC0F4222C82CFA200334822 /* SDWebImageMapKit */; };
+		9DC0F4262C83589700334822 /* CategoryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0F4252C83589700334822 /* CategoryCode.swift */; };
 		9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633A2C7C52B2000D063B /* AppDelegate.swift */; };
 		9DD6633D2C7C52B2000D063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */; };
 		9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6633E2C7C52B2000D063B /* ViewController.swift */; };
@@ -66,6 +71,9 @@
 		9DC0F4112C80AB5A00334822 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		9DC0F4152C815A5F00334822 /* HotPlacesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlacesCollectionView.swift; sourceTree = "<group>"; };
 		9DC0F4172C815CE200334822 /* HotPlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DC0F4192C819FB100334822 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9DC0F41D2C8257C100334822 /* AttractionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionResponse.swift; sourceTree = "<group>"; };
+		9DC0F4252C83589700334822 /* CategoryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCode.swift; sourceTree = "<group>"; };
 		9DD663372C7C52B2000D063B /* GoodTravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD6633A2C7C52B2000D063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD6633C2C7C52B2000D063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC0F4232C82CFA200334822 /* SDWebImageMapKit in Frameworks */,
+				9DC0F4212C82CFA200334822 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,11 +166,12 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		9DC0F3F72C7D705E00334822 /* New Group */ = {
+		9DC0F3F72C7D705E00334822 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0F4192C819FB100334822 /* NetworkManager.swift */,
 			);
-			path = "New Group";
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		9DC0F3F82C7D8AAE00334822 /* CollectionView */ = {
@@ -207,6 +218,22 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		9DC0F41B2C8257A000334822 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F41D2C8257C100334822 /* AttractionResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DC0F4242C83580200334822 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0F4252C83589700334822 /* CategoryCode.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		9DD6632E2C7C52B2000D063B = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +257,9 @@
 		9DD663392C7C52B2000D063B /* GoodTravelGuide */ = {
 			isa = PBXGroup;
 			children = (
-				9DC0F3F72C7D705E00334822 /* New Group */,
+				9DC0F4242C83580200334822 /* Resource */,
+				9DC0F41B2C8257A000334822 /* Model */,
+				9DC0F3F72C7D705E00334822 /* Networking */,
 				9DC0F3EB2C7D60C100334822 /* Views */,
 				9DC0F3E52C7D514F00334822 /* Controllers */,
 				9DD6633A2C7C52B2000D063B /* AppDelegate.swift */,
@@ -276,6 +305,10 @@
 			dependencies = (
 			);
 			name = GoodTravelGuide;
+			packageProductDependencies = (
+				9DC0F4202C82CFA200334822 /* SDWebImage */,
+				9DC0F4222C82CFA200334822 /* SDWebImageMapKit */,
+			);
 			productName = GoodTravelGuide;
 			productReference = 9DD663372C7C52B2000D063B /* GoodTravelGuide.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +381,9 @@
 				Base,
 			);
 			mainGroup = 9DD6632E2C7C52B2000D063B;
+			packageReferences = (
+				9DC0F41F2C82CFA200334822 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 9DD663382C7C52B2000D063B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,6 +428,7 @@
 			files = (
 				9DC0F3EA2C7D60B900334822 /* MainTabBarView.swift in Sources */,
 				9DC0F40B2C7EDF0B00334822 /* CategoryTableView.swift in Sources */,
+				9DC0F4262C83589700334822 /* CategoryCode.swift in Sources */,
 				9DC0F3F42C7D654E00334822 /* FavoritesViewController.swift in Sources */,
 				9DC0F3FE2C7D932E00334822 /* NavigationBarTitleView.swift in Sources */,
 				9DC0F3F62C7D655800334822 /* ProfileViewController.swift in Sources */,
@@ -400,8 +437,10 @@
 				9DC0F4062C7E266F00334822 /* CategoryCollectionViewCell.swift in Sources */,
 				9DD6633F2C7C52B2000D063B /* ViewController.swift in Sources */,
 				9DC0F3F22C7D653600334822 /* SearchViewController.swift in Sources */,
+				9DC0F41E2C8257C100334822 /* AttractionResponse.swift in Sources */,
 				9DD663452C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld in Sources */,
 				9DC0F4122C80AB5A00334822 /* CheckViewController.swift in Sources */,
+				9DC0F41A2C819FB100334822 /* NetworkManager.swift in Sources */,
 				9DC0F4162C815A5F00334822 /* HotPlacesCollectionView.swift in Sources */,
 				9DC0F3EE2C7D64DE00334822 /* MainTabBarViewController.swift in Sources */,
 				9DD6633B2C7C52B2000D063B /* AppDelegate.swift in Sources */,
@@ -745,6 +784,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9DC0F41F2C82CFA200334822 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9DC0F4202C82CFA200334822 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DC0F41F2C82CFA200334822 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		9DC0F4222C82CFA200334822 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DC0F41F2C82CFA200334822 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9DD663432C7C52B2000D063B /* GoodTravelGuide.xcdatamodeld */ = {

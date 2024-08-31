@@ -87,8 +87,7 @@ class HotPlacesCollectionViewCell: UICollectionViewCell {
             titleAddressStackView.leadingAnchor.constraint(equalTo: placesImageView.leadingAnchor),
             titleAddressStackView.topAnchor.constraint(equalTo: placesImageView.bottomAnchor, constant: 10),
             titleAddressStackView.trailingAnchor.constraint(equalTo: placesImageView.trailingAnchor, constant: -10),
-//            titleAddressStackView.heightAnchor.constraint(equalToConstant: 40)
-           titleAddressStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+            titleAddressStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ]
         
         

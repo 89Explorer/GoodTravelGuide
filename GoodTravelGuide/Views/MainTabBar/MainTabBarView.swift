@@ -25,7 +25,7 @@ class MainTabBarView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.layer.cornerRadius = 20
+        stackView.layer.cornerRadius = 10
         stackView.clipsToBounds = true
         stackView.backgroundColor = UIColor(named: "darkest-orange")
         return stackView

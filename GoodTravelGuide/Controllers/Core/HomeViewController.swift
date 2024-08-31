@@ -8,6 +8,20 @@
 import UIKit
 
 
+// MARK: - Enum
+enum ContentCategory: String {
+    case attractions = "12"
+    case facilities = "14"
+    case events = "15"
+    case course = "25"
+    case leisureActivity = "28"
+    
+    var contentId: String {
+        return self.rawValue
+    }
+}
+
+
 class HomeViewController: UIViewController {
     
     
@@ -89,7 +103,7 @@ class HomeViewController: UIViewController {
         
         contentView.addSubview(homeHeaderTitle)
         contentView.addSubview(categoryCollectionView)
-
+        
         contentView.addSubview(titleImageView)
         contentView.addSubview(hotplaceTitle)
         contentView.addSubview(hotplacesCollectionView)
@@ -97,6 +111,8 @@ class HomeViewController: UIViewController {
         collectionViewDelegate()
         tableViewDelegate()
         hotPlacesCollectionViewDelegate()
+        
+        getCommonData(contentId: "12")
         
         configureConstraints()
     }
@@ -138,7 +154,7 @@ class HomeViewController: UIViewController {
             titleImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             titleImageView.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 10),
             titleImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            titleImageView.heightAnchor.constraint(equalToConstant: 350)
+            titleImageView.heightAnchor.constraint(equalToConstant: 330)
         ]
         
         let hotplaceTitleConstraints = [
@@ -153,7 +169,7 @@ class HomeViewController: UIViewController {
             hotplacesCollectionView.topAnchor.constraint(equalTo: hotplaceTitle.bottomAnchor, constant: 16),
             hotplacesCollectionView.heightAnchor.constraint(equalToConstant: 420),
             
-            hotplacesCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -60)
+            hotplacesCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
         ]
         
         
@@ -164,13 +180,6 @@ class HomeViewController: UIViewController {
         NSLayoutConstraint.activate(titleImageViewConstraints)
         NSLayoutConstraint.activate(hotplaceTitleConstraints)
         NSLayoutConstraint.activate(hotplacesCollectionViewConstraints)
-        
-         // UIScrollView의 contentSize 설정
-//        DispatchQueue.main.async {
-//            let contentHeight = 70 + 40 + 350 + 30 + 240 + 96  // 각 뷰들의 height 합산 + 간격(약간의 여유 포함)
-//            self.basicScrollView.contentSize = CGSize(width: self.view.bounds.width, height: CGFloat(contentHeight))
-//        }
-        
     }
     
     
@@ -194,24 +203,28 @@ class HomeViewController: UIViewController {
     }
     
     
-    private func loadAttractionsData() {
-        print("Attractions data loaded")
-    }
-    
-    private func loadFacilitiesData() {
-        print("Facilities data loaded")
-    }
-    
-    private func loadEventsData() {
-        print("Events data loaded")
-    }
-    
-    private func loadCourseData() {
-        print("Course data loaded")
-    }
-    
-    private func loadLeisureactivityData() {
-        print("Leisure activity data loaded")
+    private func getCommonData(contentId: String) {
+        NetworkManager.shared.getCommonData(contentId: contentId) { [weak self] results in
+            switch results {
+            case .success(let items):
+                // firstimage가 nil이 아니고, 빈 문자열이 아닌 모든 요소 중에서 랜덤 요소를 선택
+                let validItems = items.filter {
+                    if let firstImage = $0.firstimage {
+                        return !firstImage.isEmpty
+                    }
+                    return false
+                }
+                if let randomElement = validItems.randomElement() {
+                    DispatchQueue.main.async {
+                        self?.titleImageView.configureData(with: randomElement)
+                    }
+                } else {
+                    print("No element with a valid firstimage found.")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -253,20 +266,28 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             selectedIndex = indexPath.item
             collectionView.reloadData() // 선택 상태 업데이트
             // didSelected(at: selectedIndex) // Delegate 호출
+            
+            var selectedCategory: ContentCategory?
+            
             switch selectedIndex {
             case 0:
-                loadAttractionsData()
+                selectedCategory = .attractions
             case 1:
-                loadFacilitiesData()
+                selectedCategory = .facilities
             case 2:
-                loadEventsData()
+                selectedCategory = .events
             case 3:
-                loadCourseData()
+                selectedCategory = .course
             case 4:
-                loadLeisureactivityData()
+                selectedCategory = .leisureActivity
             default:
                 break
             }
+            
+            if let category = selectedCategory {
+                getCommonData(contentId: category.contentId)
+            }
+            
         } else if collectionView == hotplacesCollectionView.getHotPlacesCollectionView() {
             // HotPlaces 컬렉션 뷰 아이템 선택 시 처리
             print("Selected hot place at index \(indexPath.item)")
@@ -291,27 +312,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
-    }
-}
-
-
-
-
-extension HomeViewController: CategoryCollectionViewDelegate {
-    func didSelected(at index: Int) {
-        switch index {
-        case 0:
-            loadAttractionsData()
-        case 1:
-            loadFacilitiesData()
-        case 2:
-            loadEventsData()
-        case 3:
-            loadCourseData()
-        case 4:
-            loadLeisureactivityData()
-        default:
-            break
-        }
     }
 }
